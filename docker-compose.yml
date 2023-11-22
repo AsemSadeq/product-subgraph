@@ -1,0 +1,12 @@
+version: '1'
+services:
+  product-subgraph:
+    image: node:20-alpine
+    container_name: product-subgraph-container
+    working_dir: /app
+    restart: always
+    command: sh -c "npm install -g typescript && npm install && npm start"
+    ports:
+      - 4000:4000
+    volumes:
+      - ./:/app
